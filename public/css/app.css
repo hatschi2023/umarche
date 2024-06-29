@@ -900,6 +900,9 @@ select {
 .w-28 {
   width: 7rem;
 }
+.w-32 {
+  width: 8rem;
+}
 .w-4 {
   width: 1rem;
 }
@@ -1817,4 +1820,5 @@ select {
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
+
 

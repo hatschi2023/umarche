@@ -14,7 +14,7 @@ class ImageService
         $extension = $imageFile->extension();
         $fileNameToStore = $fileName. '.' . $extension;
         $resizedImage = Image::read($imageFile)->resize(1280, 854)->encode();
-        Storage::put('public/' . $folderName . '/' . $fileNameToStore,$resizedImage );
+        Storage::put('public/' . $folderName . '/' . $fileNameToStore, $resizedImage );
 
         return $fileNameToStore;
     }
