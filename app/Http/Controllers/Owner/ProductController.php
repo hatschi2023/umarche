@@ -57,14 +57,6 @@ class ProductController extends Controller
 
     public function create()
     {
-
-        // $images = Image::all(); // すべての画像を取得
-        // $shops = Shop::all(); // すべての画像を取得
-        // $categories = PrimaryCategory::with('secondary')->get(); // すべての画像を取得
-
-        // return view('owner.products.create', compact('shops', 'images', 'categories'));
-
-
         $shops = Shop::where('owner_id', Auth::id())
         ->select('id', 'name')
         ->get();
@@ -90,7 +82,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
+        dd($request);
     }
 
     /**
