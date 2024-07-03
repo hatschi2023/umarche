@@ -32,6 +32,7 @@ class ImageController extends Controller
         });
     }
 
+
     public function index()
     {
         $images = Image::where('owner_id', Auth::id())
@@ -70,11 +71,13 @@ class ImageController extends Controller
                 ]);
             }
         }
+
         return redirect()
         ->route('owner.images.index')
         ->with(['message' => '画像登録を実施しました。',
         'status' => 'info']);
     }
+
 
     public function edit($id)
     {
@@ -85,7 +88,7 @@ class ImageController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title' => 'string|max:50',
+            'title' => 'string|max:50'
         ]);
 
         $image = Image::findOrFail($id);
@@ -98,18 +101,19 @@ class ImageController extends Controller
         'status' => 'info']);
     }
 
+
     public function destroy($id)
     {
         $image = Image::findOrFail($id);
 
-        $imageInProduts = Product::where('image1', $image->id)
-        ->orWhere('image2',$image->id)
-        ->orWhere('image3',$image->id)
-        ->orWhere('image4',$image->id)
+        $imageInProducts = Product::where('image1', $image->id)
+        ->orWhere('image2', $image->id)
+        ->orWhere('image3', $image->id)
+        ->orWhere('image4', $image->id)
         ->get();
 
-        if($imageInProduts){
-            $imageInProduts->each(function($product) use($image){
+        if($imageInProducts){
+            $imageInProducts->each(function($product) use($image){
                 if($product->image1 === $image->id){
                     $product->image1 = null;
                     $product->save();
