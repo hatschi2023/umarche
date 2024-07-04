@@ -1,0 +1,20 @@
+/* resources/css/app.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.items-center {
+    display: flex;
+    align-items: center;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
