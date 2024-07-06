@@ -19,7 +19,7 @@ class ItemController extends Controller
     public function index()
     {
         $stocks = DB::table('t_stocks')
-            ->select('Stock_id',
+            ->select('product_id',
             DB::raw('sum(quantity) as quantity'))
             ->groupBy('product_id')
             ->having('quantity', '>', 1);
