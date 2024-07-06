@@ -19,15 +19,15 @@ class ShopSeeder extends Seeder
                 'owner_id' => 1,
                 'name' => 'ここに店名が入ります',
                 'information' => 'ここにお店の情報が入ります。ここにお店の情報が入ります。ここにお店の情報が入ります。',
-                'filename' => '',
-                'is_selling' => true    
+                'filename' => 'image1.jpg',
+                'is_selling' => true
             ],
             [
                 'owner_id' => 2,
                 'name' => 'ここに店名が入ります',
                 'information' => 'ここにお店の情報が入ります。ここにお店の情報が入ります。ここにお店の情報が入ります。',
-                'filename' => '',
-                'is_selling' => true    
+                'filename' => 'image2.jpg',
+                'is_selling' => true
             ],
             ]);
     }
