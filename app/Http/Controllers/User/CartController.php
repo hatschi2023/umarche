@@ -97,7 +97,7 @@ class CartController extends Controller
         'line_items' => $lineItems,
         'mode' => 'payment',
         'success_url' => route('user.cart.success'),
-        // 'cancel_url' => route('user.cart.cancel'),
+        'cancel_url' => route('user.cart.cancel'),
     ]);
 
     $publicKey = env('STRIPE_PUBLIC_KEY');
