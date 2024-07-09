@@ -10,15 +10,15 @@
                                 <option value="0" @if(\Request::get('category') === '0') selected @endif>全て</option>
                                 @foreach($categories as $category)
                                 <optgroup label="{{ $category->name }}">
-                                 @foreach($category->secondary as $secondary)
-                                   <option value="{{ $secondary->id}}" @if(\Request::get('category') == $secondary->id) selected @endif >
+                                    @foreach($category->secondary as $secondary)
+                                    <option value="{{ $secondary->id}}" @if(\Request::get('category') == $secondary->id) selected @endif >
                                     {{ $secondary->name }}
-                                   </option>
-                                 @endforeach
-                               @endforeach
+                                    </option>
+                                    @endforeach
+                                @endforeach
                             </select>
                             <div class="flex space-x-2 items-center">
-                                <div><input name="keyword" class="border border-gray-500 py-2" placeholder="キーワードを入力"></div>
+                                <div><input name="keyword" class="border border-gray-500 py-2 px-2" placeholder="キーワードを入力"></div>
                                 <div><button class="ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">検索する</button></div>
                             </div>
                         </div>
