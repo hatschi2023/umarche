@@ -8,9 +8,9 @@ use App\Models\Product;
 use App\Models\Stock;
 use App\Models\PrimaryCategory;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\TestMail;
-use App\Jobs\SendThanksMail;
+// use Illuminate\Support\Facades\Mail;
+// use App\Mail\TestMail;
+
 
 
 
@@ -41,8 +41,8 @@ class ItemController extends Controller
         // ->send(new TestMail());
 
         // 非同期に送信
-        SendThanksMail::dispatch();
-        
+        // SendThanksMail::dispatch();
+
         $categories = PrimaryCategory::with('secondary')
         ->get();
 
