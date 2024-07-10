@@ -13,6 +13,7 @@ class OrderedMail extends Mailable
 
     public $product;
     public $user;
+
     public function __construct($product, $user)
     {
         $this->product = $product;

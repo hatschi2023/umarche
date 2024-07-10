@@ -58,12 +58,8 @@ class CartController extends Controller
 
     public function checkout()
 {
-    $items = Cart::where('user_id', Auth::id())->get();
-    $products = CartService::getItemsInCart($items);
-    $user = User::findOrFail(Auth::id());
 
-    SendThanksMail::dispatch($products, $user);
-    dd('ユーザーメール送信テスト');
+
 
 
 
@@ -133,6 +129,8 @@ public function success()
     }
     // dd('ユーザーメール送信テスト');
     ////
+
+
     Cart::where('user_id', Auth::id())->delete();
 
     return redirect()->route('user.items.index');
